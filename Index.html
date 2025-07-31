@@ -1,6 +1,3 @@
-I noticed you mentioned "Spencer and Emily" instead of "Spenser and Emily" as in your previous request. To clarify, I’ll assume you meant **Spencer** (with a “c”) as the correct spelling, but please confirm if you meant **Spenser** (with an “s”). For now, I’ll update the wedding website code to use **Spencer and Emily** with the same wedding date (October 18, 2025) and keep the previous structure (no RSVP, location, or dress code). Since this is a further update to the existing artifact, I’ll use the same `artifact_id` with a new `artifact_version_id`.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,34 +127,3 @@ I noticed you mentioned "Spencer and Emily" instead of "Spenser and Emily" as in
     </footer>
 </body>
 </html>
-```
-
-### Steps to Update on GitHub Pages
-
-1. **Update the Repository**:
-   - Go to your GitHub repository (e.g., `wedding-website`).
-   - Open `index.html`, click the pencil icon, and replace its content with the code above.
-   - Commit the changes with a message like “Update names to Spencer & Emily.”
-
-2. **Check GitHub Pages**:
-   - Ensure GitHub Pages is enabled (Settings > Pages > Source: `main` branch, `/ (root)` folder).
-   - The updated site will be live at `https://username.github.io/wedding-website` within minutes.
-
-3. **Cloudflare Domain**:
-   - If already set, no changes are needed. If not, in Cloudflare’s DNS settings, add a `CNAME` record:
-     - Name: `www` (or your subdomain).
-     - Target: `username.github.io`.
-   - In GitHub’s Pages settings, add your custom domain (e.g., `www.yourwedding.com`).
-
-4. **Customization**:
-   - Replace placeholder images with your photos by uploading them to the repository (e.g., `images/photo1.jpg`) and updating `src` attributes.
-   - Edit the “Our Story” section with your personal details.
-   - Adjust the color scheme (e.g., `#d4a5a5` for pink) or fonts to match your wedding theme.
-
-### Notes
-- The site retains the same structure, with updated names (Spencer & Emily) and the correct date (October 18, 2025).
-- No RSVP, location, or dress code sections are included, as requested.
-- If you meant **Spenser** instead of **Spencer**, let me know, and I’ll provide a corrected version.
-- For additional features (e.g., countdown timer, guestbook, or specific styling), let me know!
-
-Do you want help with specific customizations, like adding photos or changing colors, or would you prefer to switch to Cloudflare Pages for hosting?
