@@ -1,0 +1,163 @@
+I noticed you mentioned "Spencer and Emily" instead of "Spenser and Emily" as in your previous request. To clarify, I’ll assume you meant **Spencer** (with a “c”) as the correct spelling, but please confirm if you meant **Spenser** (with an “s”). For now, I’ll update the wedding website code to use **Spencer and Emily** with the same wedding date (October 18, 2025) and keep the previous structure (no RSVP, location, or dress code). Since this is a further update to the existing artifact, I’ll use the same `artifact_id` with a new `artifact_version_id`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding - Spencer & Emily</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f1f1;
+            color: #333;
+        }
+        header {
+            background: url('https://via.placeholder.com/1200x400.png?text=Wedding+Header') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 3em;
+        }
+        nav {
+            background-color: #d4a5a5;
+            padding: 1em;
+            position: sticky;
+            top: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #f8f1f1;
+        }
+        section {
+            padding: 3em 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: #d4a5a5;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #d4a5a5;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 2em;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Spencer & Emily</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#details">Event Details</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h2>Welcome to Our Wedding</h2>
+        <p>Join us to celebrate our love on October 18, 2025. We can't wait to share this special day with you!</p>
+    </section>
+    <section id="story">
+        <h2>Our Story</h2>
+        <p>We met in college during a group project in 2020. What started as late-night study sessions turned into coffee dates, hikes, and a love that grew stronger every day. Spencer proposed on a snowy evening in December 2024, and now we're ready to start our forever.</p>
+    </section>
+    <section id="details">
+        <h2>Event Details</h2>
+        <p><strong>Date:</strong> October 18, 2025</p>
+        <p><strong>Time:</strong> Ceremony at 4:00 PM, Reception to follow</p>
+    </section>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/200.png?text=Photo+1" alt="Couple photo">
+            <img src="https://via.placeholder.com/200.png?text=Photo+2" alt="Couple photo">
+            <img src="https://via.placeholder.com/200.png?text=Photo+3" alt="Couple photo">
+            <img src="https://via.placeholder.com/200.png?text=Photo+4" alt="Couple photo">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Spencer & Emily. Made with love.</p>
+    </footer>
+</body>
+</html>
+```
+
+### Steps to Update on GitHub Pages
+
+1. **Update the Repository**:
+   - Go to your GitHub repository (e.g., `wedding-website`).
+   - Open `index.html`, click the pencil icon, and replace its content with the code above.
+   - Commit the changes with a message like “Update names to Spencer & Emily.”
+
+2. **Check GitHub Pages**:
+   - Ensure GitHub Pages is enabled (Settings > Pages > Source: `main` branch, `/ (root)` folder).
+   - The updated site will be live at `https://username.github.io/wedding-website` within minutes.
+
+3. **Cloudflare Domain**:
+   - If already set, no changes are needed. If not, in Cloudflare’s DNS settings, add a `CNAME` record:
+     - Name: `www` (or your subdomain).
+     - Target: `username.github.io`.
+   - In GitHub’s Pages settings, add your custom domain (e.g., `www.yourwedding.com`).
+
+4. **Customization**:
+   - Replace placeholder images with your photos by uploading them to the repository (e.g., `images/photo1.jpg`) and updating `src` attributes.
+   - Edit the “Our Story” section with your personal details.
+   - Adjust the color scheme (e.g., `#d4a5a5` for pink) or fonts to match your wedding theme.
+
+### Notes
+- The site retains the same structure, with updated names (Spencer & Emily) and the correct date (October 18, 2025).
+- No RSVP, location, or dress code sections are included, as requested.
+- If you meant **Spenser** instead of **Spencer**, let me know, and I’ll provide a corrected version.
+- For additional features (e.g., countdown timer, guestbook, or specific styling), let me know!
+
+Do you want help with specific customizations, like adding photos or changing colors, or would you prefer to switch to Cloudflare Pages for hosting?
