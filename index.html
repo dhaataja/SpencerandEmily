@@ -1,130 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="noindex">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding - Spencer & Emily</title>
+    <meta name="description" content="Join Spencer & Emily for their elegant Zoom wedding celebration on October 18, 2025.">
+    <title>Spencer & Emily's Zoom Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+        /* Base Styles */
         body {
-            background-color: #f8f1f1;
-            color: #333;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
         }
-        header {
-            background: url('https://via.placeholder.com/1200x400.png?text=Wedding+Header') center/cover no-repeat;
-            height: 400px;
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: #D4A017;
+        }
+        section {
+            padding: 4rem 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        nav a {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #D4A017;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero Section */
+        #home {
+            background-image: url('couple-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        header h1 {
-            font-size: 3em;
+        #home div {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
         }
-        nav {
-            background-color: #d4a5a5;
-            padding: 1em;
-            position: sticky;
-            top: 0;
+        #home h1 {
+            font-size: 3.5rem;
+            margin: 0;
         }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2em;
+        #home p {
+            font-size: 1.3rem;
+            color: #FFFFFF;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        #home p.date {
+            font-size: 1.5rem;
+            color: #D4A017;
         }
-        nav a:hover {
-            color: #f8f1f1;
-        }
-        section {
-            padding: 3em 2em;
+
+        /* Content Sections */
+        .content-container {
             max-width: 800px;
             margin: 0 auto;
+        }
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .content-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
             text-align: center;
         }
-        section h2 {
-            font-size: 2em;
-            margin-bottom: 1em;
-            color: #d4a5a5;
+        .event-details p {
+            margin: 0.5rem 0;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
+        .event-details a.zoom-button {
+            display: inline-block;
+            background: #D4A017;
+            color: #0A0A0A;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
         }
-        .gallery img {
+        .event-details a.zoom-button:hover {
+            background: #E8B923;
+        }
+
+        /* Gallery */
+        .glide__slide img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
+        .glide__slide img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
         footer {
-            background-color: #d4a5a5;
-            color: white;
             text-align: center;
-            padding: 1em;
-            margin-top: 2em;
+            padding: 2rem;
+            background: #0A0A0A;
         }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2em;
+        footer img {
+            width: 80px;
+            margin-bottom: 0.5rem;
+        }
+        footer p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
             }
-            nav ul {
+            .nav-links {
+                display: none;
                 flex-direction: column;
-                gap: 1em;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 3.5rem;
+                left: 0;
+                width: 100%;
+                padding: 1rem 0;
+                transform: translateY(-100%);
+            }
+            .nav-links.active {
+                display: flex;
+                transform: translateY(0);
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 0.75rem;
+            }
+
+            /* Hero Section */
+            #home {
+                height: 70vh;
+                background-position: center 20%;
+            }
+            #home h1 {
+                font-size: 2.2rem;
+            }
+            #home p {
+                font-size: 1rem;
+            }
+            #home p.date {
+                font-size: 1.2rem;
+            }
+            #home div {
+                padding: 1rem;
+                max-width: 90%;
+            }
+
+            /* Content Sections */
+            section {
+                padding: 2rem 1rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .content-container p {
+                font-size: 0.95rem;
+            }
+            .event-details a.zoom-button {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+
+            /* Gallery */
+            .glide {
+                --per-view: 1;
+            }
+            .glide__slide img {
+                max-height: 250px;
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #home h1 {
+                font-size: 1.8rem;
+            }
+            #home p {
+                font-size: 0.9rem;
+            }
+            #home p.date {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .content-container p {
+                font-size: 0.9rem;
+            }
+            .glide__slide img {
+                max-height: 200px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Spencer & Emily</h1>
+        <nav>
+            <span class="hamburger">☰</span>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#our-story">Our Story</a>
+                <a href="#event-details">Event Details</a>
+                <a href="#gallery">Gallery</a>
+            </div>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#details">Event Details</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
-    </nav>
     <section id="home">
-        <h2>Welcome to Our Wedding</h2>
-        <p>Join us to celebrate our love on October 18, 2025. We can't wait to share this special day with you!</p>
+        <div>
+            <h1>Spencer & Emily</h1>
+            <p class="date">October 18, 2025</p>
+            <p>Join us for our virtual celebration of love</p>
+        </div>
     </section>
-    <section id="story">
+    <section id="our-story">
         <h2>Our Story</h2>
-        <p>TBD</p>
+        <div class="content-container">
+            <p>TBD</p>
+        </div>
     </section>
-    <section id="details">
+    <section id="event-details">
         <h2>Event Details</h2>
-        <p><strong>Date:</strong> October 18, 2025</p>
-        <p><strong>Time:</strong> Ceremony at 4:00 PM, Reception to follow</p>
+        <div class="content-container event-details">
+            <p><strong>Date:</strong> October 18, 2025</p>
+            <p><strong>Time:</strong> Ceremony at 4:00 PM EDT, Reception to follow</p>
+            <p><strong>Platform:</strong> Zoom</p>
+            <p><strong>Meeting ID:</strong> 123-456-7890</p>
+            <p><strong>Passcode:</strong> Love2025</p>
+            <p>Join us virtually to celebrate our special day! Please ensure you have Zoom installed and join 5-10 minutes early.</p>
+            <a href="https://zoom.us/j/1234567890?pwd=Love2025" class="zoom-button">Join Our Zoom Wedding</a>
+        </div>
     </section>
     <section id="gallery">
         <h2>Gallery</h2>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/200.png?text=Photo+1" alt="Couple photo">
-            <img src="https://via.placeholder.com/200.png?text=Photo+2" alt="Couple photo">
-            <img src="https://via.placeholder.com/200.png?text=Photo+3" alt="Couple photo">
-            <img src="https://via.placeholder.com/200.png?text=Photo+4" alt="Couple photo">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide"><img src="photo1.jpg" alt="Spencer & Emily"></li>
+                    <li class="glide__slide"><img src="photo2.jpg" alt="Spencer & Emily"></li>
+                    <li class="glide__slide"><img src="photo3.jpg" alt="Spencer & Emily"></li>
+                    <li class="glide__slide"><img src="photo4.jpg" alt="Spencer & Emily"></li>
+                </ul>
+            </div>
         </div>
     </section>
     <footer>
-        <p>&copy; 2025 Spencer & Emily. Made with love.</p>
+        <img src="monogram.png" alt="Spencer & Emily Monogram">
+        <p>© 2025 Spencer & Emily. Made with love.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        // Initialize Glide.js carousel
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 3,
+            gap: 20,
+            breakpoints: {
+                768: { perView: 1 }
+            }
+        }).mount();
+
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Hamburger menu toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
